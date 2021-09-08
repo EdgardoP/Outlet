@@ -1,15 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
+<%- include('partials/_header.ejs') %>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Outlet</title>
-</head>
+    <h1>Registro de Empleados</h1>
+    <div class="contenedorPrincipal">
+        <table class="tabla">
+            <thead>
+                <th>Nº</th>
+                <th>Nombre</th>
+                <th>Cargo</th>
+                <th>Acciones</th>
+            </thead>
+            <tbody>
+                <% if (data) { %>
+                 <% for( let index = 0; index < data.length; index++ ) { %>
+                    <tr>
+                        <td> <%= (index + 1)  %>  </td>
+                        <td> <%= data[index].nombreEmpleado  %>  </td>
+                        <td> <%= data[index].cargoEmpleado  %>  </td>
+                        <td> 
+                            <a href="/delete/ <%= data[index].idEmpleado %> ">Eliminar</a>
+                        </td>
+                    </tr>
+                 <% } %>
+                <% } %>
+            </tbody>
+        </table>
+        <div class="contenedorFormulario">
+            <form action="/add" method="post">
+                <input type="text" name="nombreEmpleado" placeholder="Nombre">
+                <input type="text" name="cargoEmpleado" placeholder="Cargo">
+                <button type="submit" class="btn-guardar">
+                Guardar Empleado
+            </button>
+            </form>
+        </div>
+    </div>
 
-<body>
-    <h1>Hola este es un nuevo Proyecto</h1>
-</body>
-
-</html>
+    <%- include('partials/_footer.ejs') %>

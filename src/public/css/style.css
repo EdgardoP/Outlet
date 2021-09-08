@@ -1,0 +1,72 @@
+body {
+    background-color: beige;
+    margin: 0%;
+    font-family: 'Bebas Neue', cursive;
+}
+
+h1 {
+    margin-left: 20px;
+}
+
+.nav-bar {
+    background-color: #0F111A;
+    padding: 10px 20px 10px 20px;
+}
+
+.nav-bar a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 50px;
+}
+
+.contenedorPrincipal {
+    display: flex;
+    justify-content: end;
+}
+
+.contenedorFormulario {
+    padding: 20px;
+    width: auto;
+    background-color: #E4E4CE;
+    border-color: rgb(153, 153, 153);
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 9px;
+}
+
+.contenedorFormulario input {
+    display: flex;
+    flex-direction: column;
+    font-size: 18px;
+    height: 35px;
+    margin-bottom: 20px;
+}
+
+.btn-guardar {
+    background-color: #0F111A;
+    color: #fff;
+    border-color: transparent;
+    height: 35px;
+    cursor: pointer;
+}
+
+@media (min-width:768px) {
+    .contenedorFormulario {
+        margin: 0px 90px 0px 0px;
+    }
+    .contenedorFormulario input {
+        width: 250px;
+    }
+}
+
+@media (min-width:1420px) {
+    .contenedorFormulario {
+        margin: 0px 200px 0px 0px;
+    }
+    .contenedorFormulario input {
+        width: 500px;
+    }
+    .btn-guardar {
+        width: 250px;
+    }
+}

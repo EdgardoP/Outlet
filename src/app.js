@@ -17,6 +17,7 @@ app.set('view engine', 'ejs')
 app.set('views', path.join(__dirname, 'views'))
 
 //middlewares
+
 app.use(morgan('dev'));
 app.use(myConnection(mysql, {
     host: 'localhost',
@@ -26,12 +27,14 @@ app.use(myConnection(mysql, {
     database: 'outlet',
 }, 'single'));
 
+
+app.use(express.urlencoded({ extended: true }))
+
 //routes
 app.use('/', empleadosRoute);
 
 //archivos estaticos
-app.use(express.static(path.join(__dirname, 'public')));
-
+app.use(express.static(__dirname + '/public'));
 
 //inicializar el servidor
 app.listen(app.get('port'), () => {

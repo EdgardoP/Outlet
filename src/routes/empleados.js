@@ -1,9 +1,11 @@
 const express = require("express");
 const router = express.Router();
 
-const empleadosControlaor = require('../controllers/empleadosControlador');
+const empleadosControlador = require('../controllers/empleadosControlador');
 
 
-router.get('/', empleadosControlaor.list)
+router.get('/', empleadosControlador.list);
+router.post('/add', empleadosControlador.save);
+router.get('/delete/:id', empleadosControlador.delete);
 
 module.exports = router;
