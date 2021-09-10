@@ -1,7 +1,7 @@
 body {
-    background-color: beige;
+    background-color: #F0F0F0;
     margin: 0%;
-    font-family: 'Bebas Neue', cursive;
+    font-family: 'Oswald', sans-serif;
 }
 
 h1 {
@@ -19,27 +19,35 @@ h1 {
     font-size: 50px;
 }
 
-.contenedorPrincipal {
+.contenedorGeneral {
     display: flex;
-    justify-content: end;
+    justify-content: space-between;
 }
 
 .contenedorFormulario {
-    padding: 20px;
-    width: auto;
-    background-color: #E4E4CE;
-    border-color: rgb(153, 153, 153);
-    border-style: solid;
+    padding: 10px;
+    height: 100%;
+    background-color: #FFFFFF;
     border-width: 1px;
-    border-radius: 9px;
+    border-radius: 5px;
+    border: solid 1px #E4CEE4;
+    box-shadow: #acacac 2px 3px 8px;
 }
 
 .contenedorFormulario input {
     display: flex;
+    background-color: #F4F4EC;
     flex-direction: column;
-    font-size: 18px;
-    height: 35px;
+    font-size: 16px;
+    height: 25px;
     margin-bottom: 20px;
+    border: solid 1px #fff;
+    border-radius: 6px;
+    font-family: 'Oswald', sans-serif;
+}
+
+input:focus {
+    outline: none;
 }
 
 .btn-guardar {
@@ -48,25 +56,81 @@ h1 {
     border-color: transparent;
     height: 35px;
     cursor: pointer;
+    border-radius: 7px;
+    font-family: 'Oswald', sans-serif;
+}
+
+.division {
+    border: #0F111A 1px solid;
+}
+
+.tabla {
+    background-color: #fff;
+    box-shadow: #acacac 2px 3px 8px;
+    /*derecha, abajo, difuminado */
+    width: 90%;
+    border-radius: 7px;
+    text-align: left;
+    padding: 15px;
+}
+
+.tabla td {
+    border-top: #E4E4CE solid 1px;
+    padding: 10px 0px 10px 0px;
+}
+
+.tabla button {
+    background-color: #E4E4CE;
+    margin-right: 3%;
+    padding: 3px 7px 3px 7px;
+    border: 0px;
+    box-shadow: #acacac 2px 3px 2px;
+}
+
+.tabla a {
+    color: #0F111A;
+    text-decoration: none;
+    padding: 5px;
+}
+
+.botones {
+    display: flex;
+    flex-direction: row;
+}
+
+.numero {
+    width: 5%;
 }
 
 @media (min-width:768px) {
+    .contenedorGeneral {
+        padding: 10px;
+    }
     .contenedorFormulario {
-        margin: 0px 90px 0px 0px;
+        margin: 0px 2% 0px 0px;
+        width: 30%;
     }
     .contenedorFormulario input {
-        width: 250px;
+        width: 95%;
+    }
+    .contenedorTabla {
+        margin: 0px 0px 0px 1.5%;
+        width: 100%;
     }
 }
 
 @media (min-width:1420px) {
-    .contenedorFormulario {
-        margin: 0px 200px 0px 0px;
+    .contenedorGeneral {
+        padding: 10px 0.5% 10px 0.5%;
     }
-    .contenedorFormulario input {
-        width: 500px;
+    .contenedorFormulario {
+        margin: 0px 15% 0px 0px;
+        width: 20%;
     }
     .btn-guardar {
         width: 250px;
+    }
+    .contenedorTabla {
+        margin: 0px 0px 0px 0.5%;
     }
 }
