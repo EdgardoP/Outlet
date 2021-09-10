@@ -1,0 +1,11 @@
+<%- include('partials/_header.ejs') %>
+        <div class="contenedorFormulario">
+            <form action="/update/<%= data.idEmpleado %>" method="post">
+                <input type="text" name="nombreEmpleado"  value= <%= data.nombreEmpleado %>  placeholder="Nombre">
+                <input type="text" name="cargoEmpleado" value = <%= data.cargoEmpleado %> placeholder="Cargo">
+                <button type="submit" class="btn-guardar">
+                Guardar Empleado
+            </button>
+            </form>
+        </div>
+<%- include('partials/_footer.ejs') %>

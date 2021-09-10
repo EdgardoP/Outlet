@@ -33,4 +33,28 @@ controller.delete = (req, res) => {
         })
     })
 }
+
+controller.update = (req, res) => {
+    const { id } = req.params;
+    const nuevoEmpleado = req.body;
+
+    req.getConnection((err, conn) => {
+        conn.query('UPDATE empleado set ? WHERE idEmpleado = ? ', [nuevoEmpleado, id], (err, rows) => {
+            res.redirect('/')
+        })
+    })
+
+}
+
+controller.edit = (req, res) => {
+    const { id } = req.params;
+    req.getConnection((err, conn) => {
+        conn.query('SELECT * FROM empleado where idEmpleado = ?', [id], (err, empleado) => {
+            console.log(empleado);
+            res.render('empleados_edit', {
+                data: empleado[0]
+            });
+        })
+    })
+}
 module.exports = controller;

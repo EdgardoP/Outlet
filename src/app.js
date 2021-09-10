@@ -34,7 +34,7 @@ app.use(express.urlencoded({ extended: true }))
 app.use('/', empleadosRoute);
 
 //archivos estaticos
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(path.join(__dirname, 'public')))
 
 //inicializar el servidor
 app.listen(app.get('port'), () => {
