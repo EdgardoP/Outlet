@@ -9,7 +9,7 @@ const app = express();
 
 //importando rutas
 const empleadosRoute = require('./routes/empleados')
-
+const principalRoute = require('./routes/principal')
 
 //configuraciones del servidor //Path join se usa para unir directorios
 app.set('port', process.env.PORT || 3000);
@@ -32,7 +32,7 @@ app.use(express.urlencoded({ extended: true }))
 
 //routes
 app.use('/', empleadosRoute);
-
+app.use('/', principalRoute);
 //archivos estaticos
 app.use(express.static(path.join(__dirname, 'public')))
 
