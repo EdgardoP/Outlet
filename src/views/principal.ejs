@@ -1,23 +1,28 @@
 <%- include('partials/_header.ejs') %>
-    <div class="sliderContenedor">
-        <input type="radio" name="slider" id="trigger1" checked autofocus>
-        <label for="trigger1">
-        </label>
-        <div class="slide bg1"></div>
+    <div class="contenedorSlider">
+        <div class="slides">
+            <img src="https://i.ibb.co/dGx4KmM/pantalones.jpg" alt="">
+            <div class="text">Texto</div>
+        </div>
 
-        <input type="radio" name="slider" id="trigger2">
-        <label for="trigger2">
-        </label>
-        <div class="slide bg2"></div>
+        <div class="slides">
+            <img src="https://i.ibb.co/zx9CGzX/camisas.jpg" alt="">
+            <div class="text">Texto</div>
+        </div>
 
-        <input type="radio" name="slider" id="trigger3">
-        <label for="trigger3">
-        </label>
-        <div class="slide bg3"></div>
+        <div class="slides">
+            <img src="https://i.ibb.co/74DdTKP/ropa-ni-os.jpg" alt="">
+            <div class="text">Texto</div>
+        </div>
 
-        <input type="radio" name="slider" id="trigger4">
-        <label for="trigger4">
-        </label>
-        <div class="slide bg4"></div>
+        <a class="prev" onclick="siguienteSlide(-1)">&#10094;</a>
+        <a class="next" onclick="siguienteSlide(1)">&#10095;</a>
     </div>
-    <%- include('partials/_footer.ejs') %>
+    <br>
+    <div>
+        <span class="dot" onclick="dotSlide(1)">1</span>
+        <span class="dot" onclick="dotSlide(2)">2</span>
+        <span class="dot" onclick="dotSlide(3)">3</span>
+    </div>
+    <script src="/scripts/main.js"></script>
+<%- include('partials/_footer.ejs') %>
