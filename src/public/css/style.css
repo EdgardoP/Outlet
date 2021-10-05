@@ -171,3 +171,36 @@ input:focus {
     right: 0;
     border-radius: 3px 0 0 3px;
 }
+
+.informacionSlider {
+    font-size: 25px;
+    position: absolute;
+    top: 65%;
+    background-color: #ffff;
+    border-radius: 17px;
+    padding: 7px 17px 7px 17px;
+    text-align: right;
+}
+
+.sliderIzquierda {
+    margin-left: 5%;
+}
+
+.sliderDerecha {
+    right: 0;
+    margin-right: 5%;
+}
+
+.contenedorDots {
+    width: 100%;
+    text-align: center;
+}
+
+.dot {
+    font-size: 0px;
+    margin: 10px;
+    padding: 13px;
+    border-radius: 999px;
+    background-color: #0F111A;
+    cursor: pointer;
+}

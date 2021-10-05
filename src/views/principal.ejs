@@ -2,27 +2,36 @@
     <div class="contenedorSlider">
         <div class="slides">
             <img src="https://i.ibb.co/dGx4KmM/pantalones.jpg" alt="">
-            <div class="text">Texto</div>
+            <div class="informacionSlider sliderIzquierda">
+                <h2>Pantalones a 50% de descuento solo por hoy, navega en nuestras ofertas!</h2>
+                <a href="">Ir a pantalones</a>
+            </div>
         </div>
 
         <div class="slides">
             <img src="https://i.ibb.co/zx9CGzX/camisas.jpg" alt="">
-            <div class="text">Texto</div>
+            <div class="informacionSlider sliderDerecha">
+                <h2>¿Camisetas estampadas o basicas? Averigua en nuestro enorme catalogo de prendas.</h2>
+                <a href="">Ir a camisetas</a>
+            </div>
         </div>
 
         <div class="slides">
             <img src="https://i.ibb.co/74DdTKP/ropa-ni-os.jpg" alt="">
-            <div class="text">Texto</div>
+            <div class="informacionSlider sliderIzquierda">
+                <h2>¿Tu pequeño esta creciendo rapido? Vistelo como a ti te guste con nuestras prendas para bebes!</h2>
+                <a href="">Ir a ropa de bebes</a>
+            </div>
         </div>
 
         <a class="prev" onclick="siguienteSlide(-1)">&#10094;</a>
         <a class="next" onclick="siguienteSlide(1)">&#10095;</a>
     </div>
     <br>
-    <div>
-        <span class="dot" onclick="dotSlide(1)">1</span>
-        <span class="dot" onclick="dotSlide(2)">2</span>
-        <span class="dot" onclick="dotSlide(3)">3</span>
+    <div class="contenedorDots">
+        <span class="dot" onclick="dotSlide(1)">.</span>
+        <span class="dot" onclick="dotSlide(2)">.</span>
+        <span class="dot" onclick="dotSlide(3)">.</span>
     </div>
     <script src="/scripts/main.js"></script>
-<%- include('partials/_footer.ejs') %>
+    <%- include('partials/_footer.ejs') %>

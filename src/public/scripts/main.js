@@ -1,26 +1,33 @@
-let slideIndex = 1
-mostrarSlide(slideIndex);
+let slideIndex = 0;
+let slides = document.getElementsByClassName('slides')
+mostrarSlide();
+
 
 function siguienteSlide(n) {
-    mostrarSlide(slideIndex += n);
+    mostrarSlideElegido(slideIndex += n);
 }
 
 function dotSlide(n) {
-    mostrarSlide(slideIndex = n);
+    mostrarSlideElegido(slideIndex = n)
 }
 
-function mostrarSlide(n) {
+function mostrarSlideElegido(n) {
     let i;
-    let slides = document.getElementsByClassName('slides')
-    let dots = document.getElementsByClassName('dot')
-    if (n > slides.length) { slides = 1 }
+    if (n > slides.length) { slideIndex = 1 }
     if (n < 1) { slideIndex = slides.length }
     for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";    
+        slides[i].style.display = "none"
     }
-    for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
+    slides[slideIndex - 1].style.display = "block";
+}
+
+function mostrarSlide() {
+    let i;
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = 'none';
     }
-    slides[slideIndex - 1].style.display = "block"
-    dots[slideIndex - 1].className += " active";
+    slideIndex++;
+    if (slideIndex > slides.length) { slideIndex = 1 }
+    slides[slideIndex - 1].style.display = "block";
+    setTimeout(mostrarSlide, 4000);
 }
